@@ -1,16 +1,12 @@
 //your JS code here. If required.
-function removeColor(color) {
-  var colorList = document.getElementById("colorSelect");
-  var colorItems = colorList.getElementsByTagName("option");
+document.addEventListener("DOMContentLoaded", function() {
+  const removeButton = document.querySelector('input[type="button"]');
+  const colorSelect = document.getElementById("colorSelect");
 
-  for (var i = 0; i < colorItems.length; i++) {
-    var item = colorItems[i];
-    if (item.firstChild.nodeValue.trim() === color) {
-      colorList.removeChild(item);
-      break;
+  removeButton.addEventListener("click", function() {
+    const selectedIndex = colorSelect.selectedIndex;
+    if (selectedIndex !== -1) {
+      colorSelect.remove(selectedIndex);
     }
-  }
-}
-
-
-
+  });
+});
